@@ -94,7 +94,7 @@ function wp_tal_sync_log($message, $is_error = false) {
  */
 function wp_tal_sync_admin_menu() {
     add_menu_page(
-        'WP TAL Sync Settings',
+        'Breadgoat WP TAL Sync Settings',
         'WP TAL Sync',
         'manage_options',
         'wp_tal_sync_settings',
@@ -127,13 +127,15 @@ function wp_tal_sync_settings_page() {
     }
     ?>
     <div class="wrap">
-        <h2>WP TAL Sync Settings</h2>
+        <h2>WP TAL Sync Settings - Breadgoat.com</h2>
         <form method="post">
             <?php wp_nonce_field( 'wp_tal_sync_save_api_key', 'wp_tal_sync_save_api_key_nonce' ); ?>
             <table class="form-table">
                 <tr valign="top">
                 <th scope="row">API Key</th>
-                <td><input type="text" name="wp_tal_sync_api_key" value="<?php echo esc_attr( $api_key_placeholder ); ?>" /></td>
+                <td><input type="text" name="wp_tal_sync_api_key" value="<?php echo esc_attr( $api_key_placeholder ); ?>" />
+                <p class="description">Enter your Takealot Seller API Key here. If you do not have one, you can find it by visiting your <a href="https://seller.takealot.com/api/seller-api" target="_blank">Takealot Seller account</a>.</p>
+                </td>
                 </tr>
             </table>
             <p class="submit">
